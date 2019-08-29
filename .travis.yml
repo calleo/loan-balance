@@ -1,0 +1,12 @@
+language: ruby
+before_install:
+  - gem install bundler -v "<2"
+script:
+  - bundle exec rspec ./test
+deploy:
+  provider: heroku
+  api_key: $HEROKU_API_KEY
+cache:
+  bundler: true
+  directories:
+    - /home/travis/.rvm/
